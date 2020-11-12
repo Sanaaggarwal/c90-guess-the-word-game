@@ -1,0 +1,10 @@
+var player_1name=localStorage.getItem("player_1name_key");
+var player_2name=localStorage.getItem("player_2name_key");
+var player_1score=0;
+var player_2score=0;
+document.getElementById("player_1name").innerHTML=player_1name+":";
+document.getElementById("player_2name").innerHTML=player_2name+":";
+document.getElementById("player_1score").innerHTML=player_1score;
+document.getElementById("player_2score").innerHTML=player_2score;
+document.getElementById("player_question").innerHTML="Question turn: "+player_1name;
+document.getElementById("player_answer").innerHTML="Answer turn: "+player_2name;
