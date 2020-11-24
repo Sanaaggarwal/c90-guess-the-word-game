@@ -8,3 +8,26 @@ document.getElementById("player_1score").innerHTML=player_1score;
 document.getElementById("player_2score").innerHTML=player_2score;
 document.getElementById("player_question").innerHTML="Question turn: "+player_1name;
 document.getElementById("player_answer").innerHTML="Answer turn: "+player_2name;
+function send(){
+    get_word=document.getElementById("word").value;
+    word=get_word.toLowerCase();
+    console.log(word);
+    character1=word.charAt(1);
+    console.log(character1);
+    position2=Math.floor(word.length/2);
+    character2=word.charAt(position2);
+    console.log(character2);
+    character3=word.charAt(word.length-1);
+    console.log(character3);
+    underline1=word.replace(character1,"_");
+    underline2=underline1.replace(character2,"_");
+    underline3=underline2.replace(character3,"_");
+    console.log(underline3);
+
+    questionword="<h4 id='word_display'> q. "+underline3+"</h4>";
+    inputbox="<br> Answer:<input type='text' id='input_check_box'>";
+    checkbutton="<br> <br> <button class='btn btn-success' onclick='check()'>Check</button>";
+    row=questionword+inputbox+checkbutton;
+    document.getElementById("output").innerHTML=row;
+    document.getElementById("word").value="";
+}
