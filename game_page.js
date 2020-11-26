@@ -31,3 +31,37 @@ function send(){
     document.getElementById("output").innerHTML=row;
     document.getElementById("word").value="";
 }
+question_turn="player1";
+answer_turn="player2";
+function check(){
+    get_answer=document.getElementById("input_check_box").value;
+    answer=get_answer.toLowerCase();
+    console.log("Answer is "+answer);
+  if(answer==word){
+      if(answer_turn=="player1"){
+      player_1score=player_1score+1;
+      document.getElementById("player_1score").innerHTML=player_1score;
+      }
+      else{
+          player_2score=player_2score+1;
+          document.getElementById("player_2score").innerHTML=player_2score;
+      }
+  }
+ if(question_turn=="player1"){
+     question_turn="player2";
+     document.getElementById("player_question").innerHTML="Question turn : "+player_2name;
+ }
+ else{
+     question_turn="player1";
+     document.getElementById("player_question").innerHTML="Question turn : "+player_1name;
+ }
+ if(answer_turn=="player1"){
+    answer_turn="player2";
+    document.getElementById("player_answer").innerHTML="Answer turn : "+player_2name;
+}
+else{
+    answer_turn="player1";
+    document.getElementById("player_answer").innerHTML="Answer turn : "+player_1name;
+}
+document.getElementById("output").innerHTML="";
+}
